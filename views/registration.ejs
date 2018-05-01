@@ -1,0 +1,52 @@
+<% include partials/header %>
+
+	<form method="POST" action="/registration" class="form">
+		<div class="form-field">
+			Title
+			<input type="radio" name="title" value="Mr." checked> Mr.<br>
+  			<input type="radio" name="title" value="Mrs."> Mrs.<br>
+  			<input type="radio" name="title" value="Ms."> Ms.<br>
+  		</div>
+  		<div class="form-field">
+  			First Name
+  			<input type="text" name="firstname">
+  		</div>
+  		<div class="form-field">
+  			Last Name
+  			<input type="text" name="lastname">
+  		</div>
+  		<div class="form-field">
+  		Account type
+  			<input type="checkbox" name="accounttype" value="merchant"> Merchant<br>
+  			<input type="checkbox" name="accounttype" value="consumer" checked> Consumer<br>
+  		</div>
+  		<div class="form-field">
+  			contact	
+  			<input type="number" name="contact">
+  		</div>
+  		<div class="form-field">
+  			Type of ID
+  			<input type="radio" name="idtype" value="nid" checked> NID<br>
+  			<input type="radio" name="idtype" value="d-license"> Driving License<br>
+  			<input type="radio" name="idtype" value="passport"> Passport<br>
+  			<input type="radio" name="idtype" value="other"> Other<br>
+  		</div>
+  		
+  		<div class="form-field">
+			Currency
+			<input type="radio" name="currency" value="BDT" checked>BDT
+			<input type="radio" name="currency" value="USD">USD
+		</div>
+		<div class="form-field">
+			User name
+			<input type="text" name="username">
+		</div>
+		<div class="form-field">
+			Password
+			<input type="password" name="password">
+		</div>
+		<button> Submit </button>
+	</form>
+
+
+<% include partials/footer %>
