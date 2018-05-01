@@ -1,0 +1,21 @@
+
+<% include partials/header %>
+
+	<h2 class="flex-container main-header">Wallet holders</h2>
+
+	<ul>
+
+		<% users.forEach(function(user){ %>
+		<li class="flex-container">
+			
+				<p class="user-data">
+					&nbsp;&nbsp;&nbsp;<%= user.title %> <%= user.firstname %> <%= user.lastname %> is a registered user since <%= user.since %> whose id is <%= user.userid %> and username is <%= user.username %> and balance is <%= user.balance %> and preferred currency is 
+					<%= user.currency %> 
+				</p>
+				<a href=""class="transaction-button">Show transaction</a>
+		</li>
+		
+
+	<% }) %>
+	</ul>
+<% include partials/footer %> 	

@@ -1,20 +1,21 @@
 const mongoose=require("mongoose"),
 		moment=require("moment"),
 		datemask="MMMM Do YYYY",
-		
+		passportLocalMongoose=require("passport-local-mongoose"),
 		userSchema=new mongoose.Schema({
 
 			title: String,
-			firstName: String,
+			firstname: String,
 
-			lastName: String,
+			lastname: String,
 
 			status: {
 				type: Boolean,
 				default:0
 			},
-			accountType:String,
+			accounttype:String,
 			contact: Number,
+			// ADD DIGIT COUNT VALIDATION 
 			/*email:{
 			        type: String,
 			        trim: true,
@@ -28,23 +29,28 @@ const mongoose=require("mongoose"),
 				type:String,
 				default:moment().format(datemask)
 			},
-			userId:{
+			userid:{
 				type:String,
 				
-				
-
 				default:function(){
-				return this.firstName+"-"+this.accountType+"-"+100;
+				return this.firstname+"-"+this.accounttype+"-"+100;
 				}
 			},
-			idType:String,
-			balance: Number,
+			idtype:String,
+			balance: 
+			{
+				type:Number,
+				default:0
+			},
+			username:String,
+			password:String,
 			transaction:[
 			{
 				type:mongoose.Schema.Types.ObjectId,
 				ref:'Transaction'
 
-			}]
+			}],
+			currency:String
 
 		});
 
@@ -52,5 +58,7 @@ const mongoose=require("mongoose"),
     		var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     		return re.test(email);
 			};
+
+		userSchema.plugin(passportLocalMongoose);
 
 		module.exports=mongoose.model("User", userSchema);

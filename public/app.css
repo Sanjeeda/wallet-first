@@ -1,0 +1,100 @@
+/* STYLE GUIDE
+	color:	grey(#a2a29c)  green(#3a563a)  black(#000) maroon(darkred) lightgreen(#caddcb)
+	
+
+
+*/
+
+/* COMMON STYLES*/
+html, body{
+	width:1000px;
+	background-color: #eee;
+	font: 16px "times new roman";
+	margin: 0 auto;
+	counter-reset: my-sec-counter;
+}
+
+li{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+
+.flex-container{
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: flex;
+  	-webkit-flex-flow: row wrap;
+  	flex-flow: row wrap;
+}
+
+.nav{
+	background: #caddcb;
+	justify-content:space-around;
+	align-items: center;
+}
+/* END OF COMMON STYLES */
+
+.container{
+	
+}
+
+.wrapper{
+	background-color:#eee;
+	margin:40px auto;
+	width:100%;
+}
+.logo{
+	width: 200px;
+	margin-left: 10px;
+}
+
+.nav a{
+	font-size:1.3em;
+	
+	color:darkred;
+	transition:all .5s;
+	border-top:2px solid transparent;
+}
+.nav a:not(:first-of-type):hover{
+	border-top:2px solid darkred;
+}
+
+/* main ul */
+h2.main-header+ul{
+	    border: 2px solid #3a563a;
+}
+.main-header, footer{
+	justify-content: center;
+	color:#a2a29c;
+	font:2em fantasy;
+	
+}
+.user-data{
+	color:#3a563a;
+	font-size:1.2em;
+
+}
+
+.user-data::before{
+	counter-increment: my-sec-counter;
+    content: counter(my-sec-counter) ".  ";	
+}
+.transaction-button{
+	background-color: #3a563a;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    padding: 5px;
+    color: #fff;
+    text-decoration: none;
+    justify-content: center;
+}
+
+footer{
+	font-size:1em;
+}
+

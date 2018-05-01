@@ -1,8 +1,55 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		
+		<script src="jquery.min.js"></script>
+		<script src="bootstrap.min.js"></script>
 		<link rel="stylesheet" href="bootstrap.min.css">
 		<link rel="stylesheet" href="app.css">
 	</head>
 	<body>
-</html>
+		<!--
+		<nav class="navbar navbar-default navbar-fixed-top">
+	    	<div class="container">
+	        	
+		        <div class="navbar-header">
+		            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+		                <span class="sr-only">Toggle navigation</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+		            <a href="#" class="navbar-brand"><img src="header-logo.svg"></a>
+		        </div>
+	        	
+		        <div id="navbarCollapse" class="collapse navbar-collapse">
+		            <ul class="nav navbar-nav">
+		                <li class="active"><a href="#">Home</a></li>
+		                <li><a href="#">create transaction</a></li>
+		                <li><a href="#">Messages</a></li>
+		            </ul>
+		            <ul class="nav navbar-nav navbar-right">
+		                <li><a href="#">Login</a></li>
+		            </ul>
+		        </div>
+	    	</div>
+		</nav>
+		-->
+		
+		<div class="container wrapper">
+			<nav class="flex-container nav">
+				<a href="#"><img src="header-logo.svg" style="width:200px; margin-left:20px"></a>
+				<!--<% if (!currentUser) {%>-->
+				<% if (!currentUser) {%>
+				<a href="/login"style="font-style:italic;">Login</a>
+				<a href="/registration" class="active">Registration</a>
+
+				<% } else {%>
+					<a href="/logout"style="font-style:italic;"class="">Logout</a>
+					<% } %>
+				
+				
+			</nav>
+
+
+
